@@ -16,3 +16,14 @@ PuppetLint.configuration.send('disable_single_quote_string_with_variables')
 PuppetLint.configuration.fail_on_warnings = true
 PuppetLint.configuration.ignore_paths = [".vendor/**/*.pp", ".bundle/**/*.pp", "pkg/**/*.pp", "spec/**/*.pp", "tests/**/*.pp", "types/**/*.pp", "vendor/**/*.pp"]
 
+
+desc 'Report test environment metadata to dashboard'
+task :report_env do
+  require 'json'
+  data = {
+    ruby:   RUBY_VERSION,
+    puppet: ENV['PUPPET_GEM_VERSION'] || 'default',
+    ci:     ENV['CI'],
+  }
+  puts JSON.generate(data)
+end
