@@ -4,3 +4,7 @@
 fixtures:
   forge_modules:
 #     stdlib: "puppetlabs/stdlib"
+  repositories:
+    custom_facts:
+      repo: "https://github.com/some-contributor/custom_facts_module"
+      ref: "main"
