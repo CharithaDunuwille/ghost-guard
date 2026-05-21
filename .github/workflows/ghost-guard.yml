@@ -11,5 +11,4 @@ jobs:
     with:
       pr_number: ${{ github.event.pull_request.number }}
       repo: ${{ github.repository }}
-    secrets:
-      anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+    secrets: inherit
