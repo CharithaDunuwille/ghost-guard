@@ -1,0 +1,15 @@
+name: Ghost Guard
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ghost-guard:
+    if: github.event.pull_request.head.repo.fork == true
+    uses: danielmackle/ghost-guard/.github/workflows/claude.yml@main
+    with:
+      pr_number: ${{ github.event.pull_request.number }}
+      repo: ${{ github.repository }}
+    secrets:
+      anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
