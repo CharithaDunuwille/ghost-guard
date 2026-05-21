@@ -8,7 +8,4 @@ jobs:
   ghost-guard:
     if: github.event.pull_request.head.repo.fork == true
     uses: danielmackle/ghost-guard/.github/workflows/claude.yml@main
-    with:
-      pr_number: ${{ github.event.pull_request.number }}
-      repo: ${{ github.repository }}
     secrets: inherit
