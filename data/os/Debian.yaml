@@ -1,0 +1,20 @@
+---
+# Debian/Ubuntu platform defaults for ghostscan
+ghostscan::config_dir: '/etc/ghostscan'
+ghostscan::config_file: 'ghostscan.conf'
+ghostscan::log_dir: '/var/log/ghostscan'
+ghostscan::log_level: 'info'
+ghostscan::max_scan_threads: 4
+ghostscan::scan_interval: 300
+ghostscan::retention_days: 30
+ghostscan::allowed_owners: []
+ghostscan::report_format: 'json'
+ghostscan::manage_service: true
+ghostscan::service_enable: true
+ghostscan::extra_options: {}
+ghostscan::package_name: 'ghostscan'
+ghostscan::service_name: 'ghostscan'
+ghostscan::user: 'ghostscan'
+ghostscan::group: 'ghostscan'
+ghostscan::shell: '/usr/sbin/nologin'
+ghostscan::home_dir: '/var/lib/ghostscan'
