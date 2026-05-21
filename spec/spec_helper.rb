@@ -73,3 +73,6 @@ def ensure_module_defined(module_name)
 end
 
 # 'spec_overrides' from sync.yml will appear below this line
+
+# Suppress colour codes in CI where stdout is not a TTY
+RSpec.configure { |c| c.color_mode = :off unless $stdout.tty? }
